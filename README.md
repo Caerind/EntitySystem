@@ -1,6 +1,8 @@
 # EntitySystem
 
-This is my new Entity System (To see the old one: https://github.com/Cmdu76/Aharos/tree/master/Source/EntitySystem )
+This is my new Entity System
+
+(To see the old one: https://github.com/Cmdu76/Aharos/tree/master/Source/EntitySystem )
 
 SFML is needed ! (System & Network at least)
 
@@ -10,5 +12,6 @@ SFML is needed ! (System & Network at least)
 
 Take a look at the examples :
 
-In /test : You will find an easy system to move a sprite
+In /test1 : You will find an easy system to move a sprite
+
 In /test2 : You will find a system to move this sprite using network feature
