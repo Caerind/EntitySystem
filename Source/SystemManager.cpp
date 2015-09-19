@@ -1,6 +1,9 @@
 #include "SystemManager.hpp"
 #include "EntityManager.hpp"
 
+namespace ses
+{
+
 SystemManager::SystemManager(EntityManager::Ptr entityManager)
 : mEntityManager(entityManager)
 {
@@ -42,3 +45,4 @@ void SystemManager::entityUpdate(sf::Int32 const& entityId)
     }
 }
 
+} // namespace ses

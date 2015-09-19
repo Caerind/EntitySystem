@@ -1,5 +1,5 @@
-#ifndef PACKET_HPP
-#define PACKET_HPP
+#ifndef SES_PACKET_HPP
+#define SES_PACKET_HPP
 
 #include <SFML/Network/Packet.hpp>
 #include <SFML/Graphics/Rect.hpp>
@@ -54,4 +54,4 @@ template<typename T> sf::Packet& operator >>(sf::Packet& packet, sf::Rect<T>& r)
     return packet >> r.left >> r.top >> r.width >> r.height;
 }
 
-#endif // PACKET_HPP
+#endif // SES_PACKET_HPP

@@ -1,11 +1,11 @@
 #ifndef RECTANGLECOMPONENT_HPP
 #define RECTANGLECOMPONENT_HPP
 
-#include "../Component.hpp"
+#include "../../Source/Component.hpp"
 
 #include <SFML/Graphics/RectangleShape.hpp>
 
-class RectangleComponent : public Component
+class RectangleComponent : public ses::Component
 {
     public:
         RectangleComponent();

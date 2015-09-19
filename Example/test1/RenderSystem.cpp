@@ -1,8 +1,8 @@
 #include "RenderSystem.hpp"
-#include "../EntityManager.hpp"
+#include "../../Source/EntityManager.hpp"
 #include <iostream>
 
-RenderSystem::RenderSystem(EntityManager::Ptr entityManager)
+RenderSystem::RenderSystem(ses::EntityManager::Ptr entityManager)
 : System(entityManager)
 {
     mFilter.requiresOne({SpriteComponent::getId(),RectangleComponent::getId()});

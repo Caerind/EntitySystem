@@ -1,16 +1,16 @@
 #ifndef INPUTSYSTEM_HPP
 #define INPUTSYSTEM_HPP
 
-#include "../System.hpp"
+#include "../../Source/System.hpp"
 #include "SpriteComponent.hpp"
 
 #include <SFML/System/Time.hpp>
 #include <SFML/Window/Keyboard.hpp>
 
-class InputSystem : public System
+class InputSystem : public ses::System
 {
     public:
-        InputSystem(std::shared_ptr<EntityManager> entityManager);
+        InputSystem(std::shared_ptr<ses::EntityManager> entityManager);
 
         static std::string getId();
 

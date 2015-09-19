@@ -1,5 +1,8 @@
 #include "Component.hpp"
 
+namespace ses
+{
+
 Component::Component()
 {
 }
@@ -12,3 +15,5 @@ std::string Component::getId()
 {
     return "Component";
 }
+
+} // namespace ses

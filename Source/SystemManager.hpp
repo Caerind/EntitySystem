@@ -1,11 +1,14 @@
-#ifndef SYSTEMMANAGER_HPP
-#define SYSTEMMANAGER_HPP
+#ifndef SES_SYSTEMMANAGER_HPP
+#define SES_SYSTEMMANAGER_HPP
 
 #include <map>
 #include <memory>
 
 #include "Packet.hpp"
 #include "System.hpp"
+
+namespace ses
+{
 
 class EntityManager;
 
@@ -70,4 +73,6 @@ T& SystemManager::getSystem()
     return static_cast<T&>(*mSystems.at(T::getId()));
 }
 
-#endif // SYSTEMMANAGER_HPP
+} // namespace ses
+
+#endif // SES_SYSTEMMANAGER_HPP

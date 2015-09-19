@@ -1,6 +1,9 @@
 #include "System.hpp"
 #include "EntityManager.hpp"
 
+namespace ses
+{
+
 System::System(EntityManager::Ptr entityManager)
 : mEntityManager(entityManager)
 {
@@ -46,3 +49,5 @@ std::size_t System::entitiesCount() const
 {
     return mEntities.size();
 }
+
+} // namespace ses

@@ -1,5 +1,5 @@
-#ifndef SYSTEM_HPP
-#define SYSTEM_HPP
+#ifndef SES_SYSTEM_HPP
+#define SES_SYSTEM_HPP
 
 #include <memory>
 #include <string>
@@ -7,6 +7,9 @@
 
 #include "ComponentFilter.hpp"
 #include "Packet.hpp"
+
+namespace ses
+{
 
 class EntityManager;
 
@@ -31,4 +34,6 @@ class System
         ComponentFilter mFilter;
 };
 
-#endif // SYSTEM_HPP
+} // namespace ses
+
+#endif // SES_SYSTEM_HPP

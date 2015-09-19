@@ -1,8 +1,11 @@
-#ifndef COMPONENT_HPP
-#define COMPONENT_HPP
+#ifndef SES_COMPONENT_HPP
+#define SES_COMPONENT_HPP
 
 #include <memory>
 #include <string>
+
+namespace ses
+{
 
 class Component
 {
@@ -15,4 +18,6 @@ class Component
         static std::string getId();
 };
 
-#endif // COMPONENT_HPP
+} // namespace ses
+
+#endif // SES_COMPONENT_HPP

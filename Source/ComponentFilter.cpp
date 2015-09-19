@@ -1,6 +1,9 @@
 #include "ComponentFilter.hpp"
 #include "EntityManager.hpp"
 
+namespace ses
+{
+
 ComponentFilter::ComponentFilter()
 {
 }
@@ -72,3 +75,5 @@ bool ComponentFilter::passFilter(sf::Int32 const& entityId, EntityManager::Ptr e
     }
     return true;
 }
+
+} // namespace ses

@@ -1,7 +1,7 @@
 #include "InputSystem.hpp"
-#include "../EntityManager.hpp"
+#include "../../Source/EntityManager.hpp"
 
-InputSystem::InputSystem(EntityManager::Ptr entityManager)
+InputSystem::InputSystem(ses::EntityManager::Ptr entityManager)
 : System(entityManager)
 {
     mFilter.requires(SpriteComponent::getId());

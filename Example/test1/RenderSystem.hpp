@@ -1,16 +1,16 @@
 #ifndef RENDERSYSTEM_HPP
 #define RENDERSYSTEM_HPP
 
-#include "../System.hpp"
+#include "../../Source/System.hpp"
 #include "SpriteComponent.hpp"
 #include "RectangleComponent.hpp"
 
 #include <SFML/Graphics/RenderTarget.hpp>
 
-class RenderSystem : public System
+class RenderSystem : public ses::System
 {
     public:
-        RenderSystem(std::shared_ptr<EntityManager> entityManager);
+        RenderSystem(std::shared_ptr<ses::EntityManager> entityManager);
 
         static std::string getId();
 

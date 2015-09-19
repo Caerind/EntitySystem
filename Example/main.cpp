@@ -1,10 +1,13 @@
 #include <iostream>
+
 #include <SFML/Graphics.hpp>
-#include "EntityManager.hpp"
-#include "SystemManager.hpp"
-#include "test/RenderSystem.hpp"
-#include "test/InputSystem.hpp"
-#include "test/MyEntityManager.hpp"
+
+#include "../Source/EntityManager.hpp"
+#include "../Source/SystemManager.hpp"
+
+#include "test1/RenderSystem.hpp"
+#include "test1/InputSystem.hpp"
+#include "test1/MyEntityManager.hpp"
 
 #include "test2/ServerEntityManager.hpp"
 #include "test2/ClientEntityManager.hpp"
@@ -20,11 +23,11 @@ int main()
 
 void test1()
 {
-    EntityManager::Ptr em = std::shared_ptr<EntityManager>(new MyEntityManager());
+    ses::EntityManager::Ptr em = std::shared_ptr<ses::EntityManager>(new MyEntityManager());
     //EntityManager::Ptr em = std::shared_ptr<EntityManager>(new EntityManager()); // This one don't have packet handling
     std::cout << "entity manager created" << std::endl;
 
-    SystemManager sm(em);
+    ses::SystemManager sm(em);
     std::cout << "system manager created" << std::endl;
 
     sm.addSystem<RenderSystem>();
@@ -82,12 +85,12 @@ void test1()
 
 void test2()
 {
-    EntityManager::Ptr sem = std::shared_ptr<EntityManager>(new ServerEntityManager());
-    SystemManager ssm(sem);
+    ses::EntityManager::Ptr sem = std::shared_ptr<ses::EntityManager>(new ServerEntityManager());
+    ses::SystemManager ssm(sem);
     ssm.addSystem<RenderSystem>();
 
-    EntityManager::Ptr cem = std::shared_ptr<EntityManager>(new ClientEntityManager());
-    SystemManager csm(cem);
+    ses::EntityManager::Ptr cem = std::shared_ptr<ses::EntityManager>(new ClientEntityManager());
+    ses::SystemManager csm(cem);
     csm.addSystem<RenderSystem>();
     csm.addSystem<InputSystem>();
 

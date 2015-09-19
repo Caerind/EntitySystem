@@ -1,12 +1,12 @@
 #ifndef SPRITECOMPONENT_HPP
 #define SPRITECOMPONENT_HPP
 
-#include "../Component.hpp"
+#include "../../Source/Component.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
 
-class SpriteComponent : public Component
+class SpriteComponent : public ses::Component
 {
     public:
         SpriteComponent();

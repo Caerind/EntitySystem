@@ -7,6 +7,9 @@
 
 #include <SFML/System/Utf.hpp>
 
+namespace ses
+{
+
 class EntityManager;
 
 class ComponentFilter
@@ -26,5 +29,7 @@ class ComponentFilter
         std::vector<std::string> mExcludedComponents;
         std::vector<std::vector<std::string>> mRequiredOneComponents;
 };
+
+} // namespace ses
 
 #endif // COMPONENTFILTER_HPP

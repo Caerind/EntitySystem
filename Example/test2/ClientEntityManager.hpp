@@ -5,12 +5,12 @@
 
 #include <SFML/Network.hpp>
 
-#include "../EntityManager.hpp"
+#include "../../Source/EntityManager.hpp"
 
-#include "../test/SpriteComponent.hpp"
-#include "../test/RenderSystem.hpp"
+#include "../test1/SpriteComponent.hpp"
+#include "../test1/RenderSystem.hpp"
 
-class ClientEntityManager : public EntityManager
+class ClientEntityManager : public ses::EntityManager
 {
     public:
         ClientEntityManager();

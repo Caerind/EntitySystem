@@ -1,6 +1,9 @@
 #include "EntityManager.hpp"
 #include "SystemManager.hpp"
 
+namespace ses
+{
+
 EntityManager::EntityManager()
 : mEventThread(&EntityManager::handlePackets,this)
 {
@@ -132,3 +135,4 @@ void EntityManager::handlePacket(sf::Packet& packet)
 {
 }
 
+} // namespace ses

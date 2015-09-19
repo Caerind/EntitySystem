@@ -1,12 +1,12 @@
 #ifndef MYENTITYMANAGER_HPP
 #define MYENTITYMANAGER_HPP
 
-#include "../EntityManager.hpp"
+#include "../../Source/EntityManager.hpp"
 #include "RenderSystem.hpp"
 #include "SpriteComponent.hpp"
 #include "RectangleComponent.hpp"
 
-class MyEntityManager : public EntityManager
+class MyEntityManager : public ses::EntityManager
 {
     public:
         MyEntityManager();

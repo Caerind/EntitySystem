@@ -1,5 +1,5 @@
-#ifndef ENTITYMANAGER_HPP
-#define ENTITYMANAGER_HPP
+#ifndef SES_ENTITYMANAGER_HPP
+#define SES_ENTITYMANAGER_HPP
 
 #include <cassert>
 #include <functional>
@@ -12,6 +12,9 @@
 #include "Component.hpp"
 #include "Packet.hpp"
 #include "SystemManager.hpp"
+
+namespace ses
+{
 
 class EntityManager
 {
@@ -118,5 +121,6 @@ T& EntityManager::getComponent(sf::Int32 const& entityId)
     return static_cast<T&>(*mComponents.at(entityId).at(T::getId()));
 }
 
+} // namespace ses
 
-#endif // ENTITYMANAGER_HPP
+#endif // SES_ENTITYMANAGER_HPP
