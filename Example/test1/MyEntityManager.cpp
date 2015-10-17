@@ -24,7 +24,7 @@ void MyEntityManager::handlePacket(sf::Packet& packet)
     packet >> eventId;
     switch (eventId)
     {
-        case 10: mSystems->handlePacket(ses::type_to_string<RenderSystem>(),packet); break;
+        case 10: mSystems->handlePacket(ses::type<RenderSystem>(),packet); break;
         case 11: { std::string prefabId; packet >> prefabId; usePrefab(prefabId); } break;
         default: break;
     }

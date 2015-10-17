@@ -46,20 +46,20 @@ class SystemManager
 template<typename T, typename ... Args>
 T& SystemManager::addSystem(Args&& ... args)
 {
-    mSystems[type_to_string<T>()] = std::unique_ptr<T>(new T(mEntityManager, std::forward<Args>(args)...));
+    mSystems[type<T>()] = std::unique_ptr<T>(new T(mEntityManager, std::forward<Args>(args)...));
     return getSystem<T>();
 }
 
 template<typename T>
 bool SystemManager::hasSystem()
 {
-    return mSystems.find(type_to_string<T>()) != mSystems.end();
+    return mSystems.find(type<T>()) != mSystems.end();
 }
 
 template<typename T>
 void SystemManager::removeSystem()
 {
-    auto itr = mSystems.find(type_to_string<T>());
+    auto itr = mSystems.find(type<T>());
     if (itr != mSystems.end())
     {
         itr->second = nullptr;
@@ -71,7 +71,7 @@ template<typename T>
 T& SystemManager::getSystem()
 {
     assert(hasSystem<T>());
-    return static_cast<T&>(*mSystems.at(type_to_string<T>()));
+    return static_cast<T&>(*mSystems.at(type<T>()));
 }
 
 } // namespace ses

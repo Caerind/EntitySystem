@@ -46,7 +46,7 @@ void ClientEntityManager::handlePacket(sf::Packet& packet)
     std::cout << "Client :: event : " << eventId << std::endl;
     switch (eventId)
     {
-        case 11: mSystems->handlePacket(ses::type_to_string<RenderSystem>(),packet);
+        case 11: mSystems->handlePacket(ses::type<RenderSystem>(),packet);
         case 50: { sf::Int32 entityId; packet >> entityId; addEntity(entityId); } break;
         case 51: { sf::Int32 entityId; packet >> entityId; addComponent<SpriteComponent>(entityId); } break;
         default: break;

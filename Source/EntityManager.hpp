@@ -79,7 +79,7 @@ T& EntityManager::addComponent(sf::Int32 const& entityId, Args&& ... args)
 {
     assert(hasEntity(entityId));
 
-    mComponents.at(entityId)[type_to_string<T>()] = std::unique_ptr<T>(new T(std::forward<Args>(args)...));
+    mComponents.at(entityId)[type<T>()] = std::unique_ptr<T>(new T(std::forward<Args>(args)...));
 
     if (mSystems != nullptr)
     {
@@ -93,7 +93,7 @@ template<typename T>
 bool EntityManager::hasComponent(sf::Int32 const& entityId)
 {
     assert(hasEntity(entityId));
-    return mComponents.at(entityId).find(type_to_string<T>()) != mComponents.at(entityId).end();
+    return mComponents.at(entityId).find(type<T>()) != mComponents.at(entityId).end();
 }
 
 template<typename T>
@@ -101,7 +101,7 @@ void EntityManager::removeComponent(sf::Int32 const& entityId)
 {
     assert(hasEntity(entityId));
 
-    auto itr = mComponents.at(entityId).find(type_to_string<T>());
+    auto itr = mComponents.at(entityId).find(type<T>());
     if (itr != mComponents.at(entityId).end())
     {
         mComponents.at(entityId).erase(itr);
@@ -118,7 +118,7 @@ T& EntityManager::getComponent(sf::Int32 const& entityId)
 {
     assert(hasEntity(entityId));
     assert(hasComponent<T>(entityId));
-    return static_cast<T&>(*mComponents.at(entityId).at(type_to_string<T>()));
+    return static_cast<T&>(*mComponents.at(entityId).at(type<T>()));
 }
 
 } // namespace ses

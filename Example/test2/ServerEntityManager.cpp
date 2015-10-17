@@ -73,7 +73,7 @@ void ServerEntityManager::handlePacket(sf::Packet& packet)
     std::cout << "Server :: event : " << eventId << std::endl;
     switch (eventId)
     {
-        case 10: mSystems->handlePacket(ses::type_to_string<RenderSystem>(),packet); break;
+        case 10: mSystems->handlePacket(ses::type<RenderSystem>(),packet); break;
         default: break;
     }
 }
