@@ -6,8 +6,3 @@ RectangleComponent::RectangleComponent()
     mShape.setPosition(0,0);
     mShape.setFillColor(sf::Color::Red);
 }
-
-std::string RectangleComponent::getId()
-{
-    return "RectangleComponent";
-}

@@ -6,8 +6,3 @@ SpriteComponent::SpriteComponent()
     mSprite.setTexture(mTexture);
     mSprite.setPosition(100,100);
 }
-
-std::string SpriteComponent::getId()
-{
-    return "SpriteComponent";
-}

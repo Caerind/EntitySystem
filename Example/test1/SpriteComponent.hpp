@@ -11,8 +11,6 @@ class SpriteComponent : public ses::Component
     public:
         SpriteComponent();
 
-        static std::string getId();
-
         sf::Sprite mSprite;
         sf::Texture mTexture;
 };

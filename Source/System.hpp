@@ -6,6 +6,7 @@
 
 #include "ComponentFilter.hpp"
 #include "Packet.hpp"
+#inclute "TypeToString.hpp"
 
 namespace ses
 {

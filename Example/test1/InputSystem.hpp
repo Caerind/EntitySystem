@@ -12,8 +12,6 @@ class InputSystem : public ses::System
     public:
         InputSystem(std::shared_ptr<ses::EntityManager> entityManager);
 
-        static std::string getId();
-
         void update(sf::Time dt);
 
         void handlePacket(sf::Packet& packet);

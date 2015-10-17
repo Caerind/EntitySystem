@@ -4,12 +4,7 @@
 InputSystem::InputSystem(ses::EntityManager::Ptr entityManager)
 : System(entityManager)
 {
-    mFilter.requires(SpriteComponent::getId());
-}
-
-std::string InputSystem::getId()
-{
-    return "InputSystem";
+    mFilter.requires(type_to_string<SpriteComponent>());
 }
 
 void InputSystem::update(sf::Time dt)

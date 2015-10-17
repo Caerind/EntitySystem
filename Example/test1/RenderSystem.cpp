@@ -5,12 +5,7 @@
 RenderSystem::RenderSystem(ses::EntityManager::Ptr entityManager)
 : System(entityManager)
 {
-    mFilter.requiresOne({SpriteComponent::getId(),RectangleComponent::getId()});
-}
-
-std::string RenderSystem::getId()
-{
-    return "RenderSystem";
+    mFilter.requiresOne({type_to_string<SpriteComponent>(),type_to_string<RectangleComponent>()});
 }
 
 void RenderSystem::render(sf::RenderTarget& target)
