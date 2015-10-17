@@ -20,16 +20,13 @@ class System
         virtual ~System();
 
         typedef std::unique_ptr<System> Ptr;
+        typedef std::vector<sf::Int32> EntityVector;
 
         virtual void handlePacket(sf::Packet& packet);
-        void entityUpdate(sf::Int32 const& entityId);
-
-        std::size_t entitiesCount() const;
+        virtual void entityUpdate(sf::Int32 const& entityId);
 
     protected:
         std::shared_ptr<EntityManager> mEntityManager;
-        std::vector<sf::Int32> mEntities;
-        ComponentFilter mFilter;
 };
 
 } // namespace ses
