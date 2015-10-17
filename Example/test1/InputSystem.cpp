@@ -4,7 +4,7 @@
 InputSystem::InputSystem(ses::EntityManager::Ptr entityManager)
 : System(entityManager)
 {
-    mFilter.requires(type_to_string<SpriteComponent>());
+    mFilter.requires(ses::type_to_string<SpriteComponent>());
 }
 
 void InputSystem::update(sf::Time dt)

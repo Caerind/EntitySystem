@@ -5,7 +5,7 @@
 RenderSystem::RenderSystem(ses::EntityManager::Ptr entityManager)
 : System(entityManager)
 {
-    mFilter.requiresOne({type_to_string<SpriteComponent>(),type_to_string<RectangleComponent>()});
+    mFilter.requiresOne({ses::type_to_string<SpriteComponent>(),ses::type_to_string<RectangleComponent>()});
 }
 
 void RenderSystem::render(sf::RenderTarget& target)
