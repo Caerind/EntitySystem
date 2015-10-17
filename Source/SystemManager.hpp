@@ -6,6 +6,7 @@
 
 #include "Packet.hpp"
 #include "System.hpp"
+#include "TypeToString.hpp"
 
 namespace ses
 {
@@ -45,20 +46,20 @@ class SystemManager
 template<typename T, typename ... Args>
 T& SystemManager::addSystem(Args&& ... args)
 {
-    mSystems[T::getId()] = std::unique_ptr<T>(new T(mEntityManager, std::forward<Args>(args)...));
+    mSystems[type_to_string<T>()] = std::unique_ptr<T>(new T(mEntityManager, std::forward<Args>(args)...));
     return getSystem<T>();
 }
 
 template<typename T>
 bool SystemManager::hasSystem()
 {
-    return mSystems.find(T::getId()) != mSystems.end();
+    return mSystems.find(type_to_string<T>()) != mSystems.end();
 }
 
 template<typename T>
 void SystemManager::removeSystem()
 {
-    auto itr = mSystems.find(T::getId());
+    auto itr = mSystems.find(type_to_string<T>());
     if (itr != mSystems.end())
     {
         itr->second = nullptr;
@@ -70,7 +71,7 @@ template<typename T>
 T& SystemManager::getSystem()
 {
     assert(hasSystem<T>());
-    return static_cast<T&>(*mSystems.at(T::getId()));
+    return static_cast<T&>(*mSystems.at(type_to_string<T>()));
 }
 
 } // namespace ses

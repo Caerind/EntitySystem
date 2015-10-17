@@ -13,11 +13,6 @@ System::~System()
 {
 }
 
-std::string System::getId()
-{
-    return "System";
-}
-
 void System::handlePacket(sf::Packet& packet)
 {
 }

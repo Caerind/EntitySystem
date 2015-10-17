@@ -11,9 +11,4 @@ Component::~Component()
 {
 }
 
-std::string Component::getId()
-{
-    return "Component";
-}
-
 } // namespace ses
