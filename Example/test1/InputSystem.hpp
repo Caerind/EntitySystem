@@ -15,6 +15,14 @@ class InputSystem : public ses::System
         void update(sf::Time dt);
 
         void handlePacket(sf::Packet& packet);
+
+        void entityUpdate(sf::Int32 const& entityId);
+
+        std::size_t entitiesCount() const { return mEntities.size(); }
+
+    protected:
+        ses::ComponentFilter mFilter;
+        ses::EntityVector mEntities;
 };
 
 #endif // INPUTSYSTEM_HPP
